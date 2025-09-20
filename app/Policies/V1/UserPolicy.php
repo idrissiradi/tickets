@@ -16,12 +16,12 @@ class UserPolicy
         //
     }
 
-    public function delete(User $user, Ticket $ticket)
+    public function delete(User $user, User $model)
     {
         return $user->tokenCan(Abilities::DeleteUser);
     }
 
-    public function replace(User $user, Ticket $ticket)
+    public function replace(User $user, User $model)
     {
         return $user->tokenCan(Abilities::ReplaceUser);
     }
@@ -31,7 +31,7 @@ class UserPolicy
         return $user->tokenCan(Abilities::CreateUser);
     }
 
-    public function update(User $user, Ticket $ticket)
+    public function update(User $user, User $model)
     {
         return $user->tokenCan(Abilities::UpdateUser);
     }
